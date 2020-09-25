@@ -8,7 +8,7 @@ public class Piece {
 	public Piece(Board board) {
 		this.board = board;
 		position = null;
-	}
+	} // fim do construtor
 
 	protected Board getBoard() {
 		return board;

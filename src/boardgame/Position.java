@@ -8,7 +8,7 @@ public class Position {
 	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
-	}
+	} // fim do construtor
 
 	public int getRow() {
 		return row;
@@ -29,6 +29,6 @@ public class Position {
 	@Override
 	public String toString() {
 		return row + ", " + column;
-	}
+	} // fim toString
 
 }
