@@ -45,6 +45,19 @@ public class Board {
 		piece.position = position;
 	} // fim placePiece
 
+	public Piece removePiece(Position position) {
+		if (positionNotExists(position)) {
+			throw new BoardException(BoardException.MSG_POSITION_NOT_BOARD);
+		}
+		if (piece(position) == null) {
+			return null;
+		}
+		Piece aux = piece(position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		return aux;
+	} // fim removePiece
+
 	private boolean positionExists(int row, int column) {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
 	} // fim positionExists
@@ -67,5 +80,9 @@ public class Board {
 		}
 		return piece(position) != null;
 	} // fim thereIsAPiece
+	
+	public boolean thereIsNotAPiece(Position position) {
+		return !thereIsAPiece(position);		
+	}
 
 }
