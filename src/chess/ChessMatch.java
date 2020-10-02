@@ -25,6 +25,12 @@ public class ChessMatch {
 		return mat;
 	} // fim getPieces
 
+	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	} // fim possibleMoves
+
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
@@ -49,12 +55,11 @@ public class ChessMatch {
 			throw new ChessException(ChessException.MSG_NO_POSSIBLE_MOVES);
 		}
 	} // fim validateSourcePosition
-	
-	
+
 	private void validateTargetPosition(Position source, Position target) {
-		if(!board.piece(source).possibleMove(target)) {
+		if (!board.piece(source).possibleMove(target)) {
 			throw new ChessException(ChessException.MSG_NO_POSSIBLE_MOVE_TARGET);
-		}	
+		}
 	} // fim validateTargetPosition
 
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
