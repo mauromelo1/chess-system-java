@@ -8,7 +8,8 @@ public class ChessException extends BoardException {
 
 	public static String MSG_ERROR_CHESSPOSITION = "Error instantiating ChessPosition. Valid values are from a1 to h8";
 	public static String MSG_ERROR_READ_CHESSPOSITION = "Error reading ChessPosition. Valid values are from a1 to h8";
-	public static String MSG_NO_PIECE_SOURCE = "there is no piece on source position";
+	public static String MSG_NO_PIECE_SOURCE = "There is no piece on source position";
+	public static String MSG_NO_POSSIBLE_MOVES = "There is no possible moves for the chosen piece";
 
 	public ChessException(String msg) {
 		super(msg);
