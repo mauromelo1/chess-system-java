@@ -12,6 +12,7 @@ public class ChessException extends BoardException {
 	public static String MSG_NO_POSSIBLE_MOVES = "There is no possible moves for the chosen piece";
 	public static String MSG_NO_POSSIBLE_MOVE_TARGET = "The chose piece can't move to target position";
 	public static String MSG_NO_CURRENT_PLAYER = "The chosen piece is not yours";
+	public static String MSG_CANT_PUT_YOUR_CHECK = "You can't put yourself in check";
 
 	public ChessException(String msg) {
 		super(msg);
